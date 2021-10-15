@@ -220,18 +220,18 @@ public class DataUpload {
                 .region(Region.US_EAST_1)
                 .build();
 
-        DynamoDbClient dynomodb = DynamoDbClient.builder()
+        DynamoDbClient dynamodb = DynamoDbClient.builder()
                 .credentialsProvider(credentials)
                 .region(Region.US_EAST_1)
                 .build();
 
         createS3Bucket(s3);
 
-        createTable(dynomodb);
+        createTable(dynamodb);
 
-        loadData(s3, dynomodb);
+        loadData(s3, dynamodb);
 
-        getItem(dynomodb);
+        getItem(dynamodb);
 
         System.exit(0);
     }
