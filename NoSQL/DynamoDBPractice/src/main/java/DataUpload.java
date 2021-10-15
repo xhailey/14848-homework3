@@ -212,8 +212,7 @@ public class DataUpload {
    }
 
     public static void main(final String[] args) {
-//        export AWS_ACCESS_KEY_ID=AKIATE4RMRNEHCY2LUPD
-//        export AWS_SECRET_ACCESS_KEY=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
+        // Remember to set environment variables AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
         EnvironmentVariableCredentialsProvider credentials = EnvironmentVariableCredentialsProvider.create();
 
         S3Client s3 = S3Client.builder()
@@ -225,12 +224,12 @@ public class DataUpload {
                 .credentialsProvider(credentials)
                 .region(Region.US_EAST_1)
                 .build();
-//
-//        createS3Bucket(s3);
-//
-//        createTable(dynomodb);
-//
-//        loadData(s3, dynomodb);
+
+        createS3Bucket(s3);
+
+        createTable(dynomodb);
+
+        loadData(s3, dynomodb);
 
         getItem(dynomodb);
 
