@@ -1,6 +1,7 @@
 # 14848 Homework 3
 
-To start the program, do the following in the same terminal
+To start the program, you will need to install maven first.
+Then do the following in the same terminal
 
 ```
 export AWS_ACCESS_KEY_ID=youraccesskey
